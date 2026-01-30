@@ -1,0 +1,346 @@
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Manrope", sans-serif;
+  height: 100%;
+}
+
+.navbar {
+  background-color: #e5e7eb;
+  width: 100%;
+  height: 70px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  position: fixed;
+}
+.navbar img {
+  height: 50px;
+  padding-left: 100px;
+}
+.navbar .nav-buttons {
+  align-items: center;
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  height: 100%;
+}
+.navbar .nav-buttons a {
+  background-color: #e5e7eb;
+  border-style: none;
+  font-family: "Manrope", sans-serif;
+  font-size: 1.1em;
+  text-decoration: none;
+  color: black;
+}
+.navbar .nav-buttons a:hover {
+  font-weight: bold;
+  cursor: pointer;
+}
+.navbar .separador-lateral {
+  height: 50px;
+  width: 316.13px;
+}
+
+.main-section {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+.main-section h1 {
+  font-size: 3.5em;
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+.main-section p {
+  font-size: 1.5em;
+  margin: 20px 0;
+  padding: 0;
+  color: white;
+}
+.main-section input {
+  width: 30vw;
+  height: 40px;
+  border-radius: 20px;
+  border: none;
+  padding: 0 15px;
+  font-size: 1.2em;
+  text-align: center;
+}
+.main-section article {
+  background-color: #5E17EB;
+  color: white;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.main-section article .first-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  padding-top: 70px;
+  height: calc(100dvh - 70px);
+}
+.main-section article button {
+  background-color: #FDCB58;
+  border-style: none;
+  font-family: "Manrope", sans-serif;
+  font-size: 1.2em;
+  color: black;
+  width: 160px;
+  padding: 20px;
+  border-radius: 35px;
+}
+.main-section article button:hover {
+  cursor: pointer;
+  font-weight: bold;
+  background-color: rgb(252.3964497041, 187.3076923077, 37.6035502959);
+}
+
+.pilares-section, .formulario-contacto-section, .equipo-section, .planes-section {
+  width: 100%;
+  height: auto;
+  padding: 50px 0;
+  text-align: center;
+  background-color: #f0f0f0;
+  scroll-margin-top: 70px;
+}
+.pilares-section h2, .formulario-contacto-section h2, .equipo-section h2, .planes-section h2 {
+  font-size: 2.5em;
+  margin: 0;
+  padding: 0;
+  color: black;
+}
+.pilares-section p, .formulario-contacto-section p, .equipo-section p, .planes-section p {
+  font-size: 1.5em;
+  margin: 20px 0;
+  padding: 0;
+  color: rgb(100, 100, 100);
+}
+.pilares-section .card-pilares-section, .formulario-contacto-section .card-pilares-section, .formulario-contacto-section .formulario-section, .equipo-section .card-pilares-section, .equipo-section .equipo-cards-section, .planes-section .card-pilares-section, .planes-section .planes-card-section {
+  padding: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+.pilares-section .card-pilares-section .pilar, .formulario-contacto-section .card-pilares-section .pilar, .formulario-contacto-section .formulario-section .pilar, .formulario-contacto-section .formulario-section .formulario-div, .equipo-section .card-pilares-section .pilar, .equipo-section .equipo-cards-section .pilar, .equipo-section .equipo-cards-section div, .planes-section .card-pilares-section .pilar, .planes-section .planes-card-section .pilar, .planes-section .planes-card-section div {
+  border-style: solid;
+  border-color: #dbdde0;
+  background-color: white;
+  border-radius: 15px;
+  height: 250px;
+  width: 400px;
+}
+.pilares-section .card-pilares-section .pilar p, .formulario-contacto-section .card-pilares-section .pilar p, .formulario-contacto-section .formulario-section .pilar p, .formulario-contacto-section .formulario-section .formulario-div p, .equipo-section .card-pilares-section .pilar p, .equipo-section .equipo-cards-section .pilar p, .equipo-section .equipo-cards-section div p, .planes-section .card-pilares-section .pilar p, .planes-section .planes-card-section .pilar p, .planes-section .planes-card-section div p {
+  text-align: center;
+  font-size: 1.2em;
+  color: rgb(0, 0, 0);
+}
+.pilares-section .card-pilares-section .pilar img, .formulario-contacto-section .card-pilares-section .pilar img, .formulario-contacto-section .formulario-section .pilar img, .formulario-contacto-section .formulario-section .formulario-div img, .equipo-section .card-pilares-section .pilar img, .equipo-section .equipo-cards-section .pilar img, .equipo-section .equipo-cards-section div img, .planes-section .card-pilares-section .pilar img, .planes-section .planes-card-section .pilar img, .planes-section .planes-card-section div img {
+  width: 55px;
+  height: 55px;
+  padding: 15px;
+  border-radius: 20px;
+  background-color: #cebaee;
+}
+.pilares-section .card-pilares-section .pilar .logo-mitad, .formulario-contacto-section .card-pilares-section .pilar .logo-mitad, .formulario-contacto-section .formulario-section .pilar .logo-mitad, .formulario-contacto-section .formulario-section .formulario-div .logo-mitad, .equipo-section .card-pilares-section .pilar .logo-mitad, .equipo-section .equipo-cards-section .pilar .logo-mitad, .equipo-section .equipo-cards-section div .logo-mitad, .planes-section .card-pilares-section .pilar .logo-mitad, .planes-section .planes-card-section .pilar .logo-mitad, .planes-section .planes-card-section div .logo-mitad {
+  background-color: wheat;
+}
+.pilares-section .card-pilares-section .pilar:hover, .formulario-contacto-section .card-pilares-section .pilar:hover, .formulario-contacto-section .formulario-section .pilar:hover, .formulario-contacto-section .formulario-section .formulario-div:hover, .equipo-section .card-pilares-section .pilar:hover, .equipo-section .equipo-cards-section .pilar:hover, .equipo-section .equipo-cards-section div:hover, .planes-section .card-pilares-section .pilar:hover, .planes-section .planes-card-section .pilar:hover, .planes-section .planes-card-section div:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition: 0.3s;
+  padding: 10px;
+}
+
+.planes-section {
+  background-color: #e5e7eb;
+}
+.planes-section p {
+  font-style: italic;
+}
+.planes-section .planes-card-section div {
+  height: 400px;
+}
+.planes-section .planes-card-section h3 {
+  font-size: 1.8em;
+  margin: 0px;
+  padding-top: 20px;
+}
+.planes-section .planes-card-section h4 {
+  font-size: 1.2em;
+  margin: 0px;
+  padding: 0px;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  color: rgb(100, 100, 100);
+}
+.planes-section .planes-card-section .plan-mitad {
+  background-color: wheat;
+  border-radius: 100px;
+}
+.planes-section .planes-card-section .plan-icono {
+  border-radius: 100px;
+}
+.planes-section .planes-card-section ul {
+  text-align: center;
+  font-size: 1.1em;
+  color: rgb(0, 0, 0);
+  list-style: none;
+}
+.planes-section .planes-card-section ul li {
+  margin: 15px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.planes-section .planes-card-section ul li svg {
+  fill: #FDCB58;
+  width: 30px;
+}
+
+.equipo-section .equipo-cards-section {
+  padding-top: 10px;
+}
+.equipo-section .equipo-cards-section div {
+  flex-direction: column;
+  height: 270px;
+  width: 300px;
+  justify-content: center;
+  align-items: center;
+  margin: 0px;
+  padding: 0px;
+  padding-top: 20px;
+}
+.equipo-section .equipo-cards-section div img {
+  width: 130px;
+  height: 130px;
+  border-radius: 75px;
+  padding: 0px;
+  padding-top: 10px;
+  background-color: white;
+}
+.equipo-section .equipo-cards-section div h3 {
+  font-size: 1.5em;
+  margin: 10px 0 0 0;
+  padding: 0px;
+}
+.equipo-section .equipo-cards-section div p {
+  font-size: 1.1em;
+  color: rgb(100, 100, 100);
+}
+
+.formulario-contacto-section {
+  background-color: #e5e7eb;
+}
+.formulario-contacto-section .formulario-section {
+  padding-top: 10px;
+}
+.formulario-contacto-section .formulario-section .formulario-div {
+  padding-top: 50px;
+  padding: 0px;
+  margin: 0px;
+  display: flex;
+  width: auto;
+  height: auto;
+  gap: 10px;
+}
+.formulario-contacto-section .formulario-section .formulario-div .fila-formulario {
+  width: auto;
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  border-style: none;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  gap: 20px;
+}
+.formulario-contacto-section .formulario-section .formulario-div .fila-formulario .campo-formulario {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+.formulario-contacto-section .formulario-section .formulario-div .fila-formulario .campo-formulario h4 {
+  margin: 0px;
+  padding: 10px;
+  font-size: 1.2em;
+  color: rgb(0, 0, 0);
+}
+.formulario-contacto-section .formulario-section .formulario-div input {
+  background-color: #e5e7eb;
+  height: 40px;
+}
+.formulario-contacto-section .formulario-section .formulario-div button {
+  background-color: #FDCB58;
+  border-style: none;
+  font-family: "Manrope", sans-serif;
+  font-size: 1.2em;
+  color: black;
+  width: auto;
+  padding: 20px;
+  border-radius: 35px;
+}
+
+.footer {
+  background-color: black;
+  width: auto;
+  height: auto;
+  padding: 5px;
+}
+.footer .informacion-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 25vw;
+  padding-right: 25vw;
+  padding-bottom: 20px;
+}
+.footer .informacion-section h4 {
+  color: white;
+}
+.footer .informacion-section p {
+  color: #c2c2c2;
+}
+.footer .informacion-section a {
+  color: #c2c2c2;
+  text-decoration: none;
+  padding: 0px;
+  margin: 0px;
+  padding-bottom: 20px;
+}
+.footer .informacion-section .enlaces_rapidos {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.footer .informacion-section .enlaces_rapidos h4 {
+  padding: 0px;
+  margin: 0px;
+  padding-top: 20px;
+}
+.footer .informacion-section .lista_enlaces div {
+  padding-top: 10px;
+}
+.footer .final-section {
+  text-align: center;
+  padding: 10px;
+  border-top: #c2c2c2 1px solid;
+}
+.footer .final-section p {
+  color: #c2c2c2;
+}/*# sourceMappingURL=main.css.map */
