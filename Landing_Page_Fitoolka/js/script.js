@@ -167,7 +167,7 @@ input.addEventListener("input",()=>{
   if(valor === "") return;
 
   const resultados = objetivosFinancieros.filter(objetivo =>
-    objetivo.toLowerCase().startsWith(valor)
+    objetivo.toLowerCase().includes(valor)
   );
 
   mostrarResultados(resultados);

@@ -496,6 +496,7 @@ body {
 .formulario-contacto-section .formulario-section .formulario-div input {
   background-color: #e5e7eb;
   height: 40px;
+  border-radius: 30px;
 }
 .formulario-contacto-section .formulario-section .formulario-div button {
   background-color: #FDCB58;
