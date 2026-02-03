@@ -1,5 +1,6 @@
 html {
   height: 100%;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -9,16 +10,28 @@ body {
   height: 100%;
 }
 
+@keyframes appearFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .navbar {
   background-color: #e5e7eb;
-  width: 100%;
-  height: 70px;
+  width: 100dvw;
+  min-height: 70px;
   padding: 5px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 20px;
   position: fixed;
+  z-index: 3;
+  flex-wrap: wrap;
 }
 .navbar img {
   height: 50px;
@@ -44,7 +57,7 @@ body {
   cursor: pointer;
 }
 .navbar .separador-lateral {
-  height: 50px;
+  height: 1px;
   width: 316.13px;
 }
 
@@ -69,11 +82,11 @@ body {
 }
 .main-section input {
   width: 30vw;
-  height: 40px;
-  border-radius: 20px;
+  height: 50px;
   border: none;
-  padding: 0 15px;
-  font-size: 1.2em;
+  padding: 0px;
+  margin: 0px;
+  font-size: 1.3em;
   text-align: center;
 }
 .main-section article {
@@ -85,15 +98,91 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-image: url(../assets/gif/background.gif);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 .main-section article .first-section {
   display: flex;
-  flex-direction: column;
   align-items: center;
   text-align: center;
-  justify-content: center;
   padding-top: 70px;
   height: calc(100dvh - 70px);
+  justify-content: space-between;
+}
+.main-section article .first-section .text-section {
+  justify-content: center;
+  text-align: center;
+  z-index: 2;
+}
+.main-section article .first-section .autocomplete {
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  margin: 0px;
+  padding: 0px;
+  width: 30vw;
+}
+.main-section article .first-section .autocomplete input {
+  border-radius: 20px;
+}
+.main-section article .first-section .autocomplete .autocomplete-items {
+  position: absolute;
+  padding-top: 10px;
+  width: 30vw;
+  background-color: white;
+  color: black;
+  margin: 0px;
+  padding: 0px;
+  z-index: 10;
+  font-size: 1.3em;
+  border-radius: 0 0 20px 20px;
+}
+.main-section article .first-section .autocomplete .autocomplete-items .autocomplete-item {
+  padding: 10px;
+}
+.main-section article .first-section .autocomplete .autocomplete-items .autocomplete-item:hover {
+  background-color: #cebaee;
+  cursor: pointer;
+}
+.main-section article .first-section .autocomplete.open input {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.main-section article .first-section .autocomplete .autocomplete-items:empty {
+  display: none;
+}
+.main-section article .first-section > * h1,
+.main-section article .first-section > * p,
+.main-section article .first-section > * input,
+.main-section article .first-section > * button,
+.main-section article .first-section > *.autocomplete-items {
+  opacity: 0;
+  animation: appearFromBottom 0.8s ease-out forwards;
+}
+.main-section article .first-section > * h1 {
+  animation-delay: 0.2s;
+}
+.main-section article .first-section > * p {
+  animation-delay: 0.4s;
+}
+.main-section article .first-section > * input {
+  animation-delay: 0.6s;
+}
+.main-section article .first-section > * button {
+  animation-delay: 0.8s;
+}
+.main-section article .first-section > *.autocomplete-items {
+  animation-delay: 0.6s;
+}
+.main-section article .first-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(94, 23, 235, 0.8); /* oscurece */
+  z-index: 1;
 }
 .main-section article button {
   background-color: #FDCB58;
@@ -118,6 +207,9 @@ body {
   text-align: center;
   background-color: #f0f0f0;
   scroll-margin-top: 70px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
 }
 .pilares-section h2, .formulario-contacto-section h2, .equipo-section h2, .planes-section h2 {
   font-size: 2.5em;
@@ -137,13 +229,14 @@ body {
   align-items: center;
   justify-content: center;
   gap: 40px;
+  flex-wrap: wrap;
 }
 .pilares-section .card-pilares-section .pilar, .formulario-contacto-section .card-pilares-section .pilar, .formulario-contacto-section .formulario-section .pilar, .formulario-contacto-section .formulario-section .formulario-div, .equipo-section .card-pilares-section .pilar, .equipo-section .equipo-cards-section .pilar, .equipo-section .equipo-cards-section div, .planes-section .card-pilares-section .pilar, .planes-section .planes-card-section .pilar, .planes-section .planes-card-section div {
   border-style: solid;
   border-color: #dbdde0;
   background-color: white;
   border-radius: 15px;
-  height: 250px;
+  min-height: 250px;
   width: 400px;
 }
 .pilares-section .card-pilares-section .pilar p, .formulario-contacto-section .card-pilares-section .pilar p, .formulario-contacto-section .formulario-section .pilar p, .formulario-contacto-section .formulario-section .formulario-div p, .equipo-section .card-pilares-section .pilar p, .equipo-section .equipo-cards-section .pilar p, .equipo-section .equipo-cards-section div p, .planes-section .card-pilares-section .pilar p, .planes-section .planes-card-section .pilar p, .planes-section .planes-card-section div p {
@@ -167,6 +260,11 @@ body {
   padding: 10px;
 }
 
+.pilares-section.active, .active.formulario-contacto-section, .active.equipo-section, .active.planes-section {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .planes-section {
   background-color: #e5e7eb;
 }
@@ -174,7 +272,7 @@ body {
   font-style: italic;
 }
 .planes-section .planes-card-section div {
-  height: 400px;
+  min-height: 400px;
 }
 .planes-section .planes-card-section h3 {
   font-size: 1.8em;
@@ -213,6 +311,115 @@ body {
   width: 30px;
 }
 
+.planes-section.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.validadores-section {
+  width: 100%;
+  height: auto;
+  padding: 50px 0;
+  text-align: center;
+  background-color: #5E17EB;
+  color: white;
+  scroll-margin-top: 70px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+  background-image: url(../assets/gif/background.gif);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 2;
+}
+.validadores-section .validadores-section-texto-inicial h1 {
+  position: relative;
+  font-size: 3.5em;
+  margin: 0;
+  padding: 0;
+  z-index: 1;
+}
+.validadores-section .validadores-section-texto-inicial h2 {
+  position: relative;
+  z-index: 1;
+}
+.validadores-section .validadores-contenedor {
+  display: flex;
+  flex-direction: row;
+}
+.validadores-section .metricas, .validadores-section .comentarios {
+  width: 50%;
+  gap: 50px;
+  align-items: center;
+  z-index: 1;
+}
+.validadores-section .metricas .metrica, .validadores-section .comentarios .metrica {
+  display: flex;
+  align-items: center;
+  vertical-align: center;
+}
+.validadores-section .metricas .metrica .parte-izquierda, .validadores-section .comentarios .metrica .parte-izquierda {
+  vertical-align: middle;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: 50%;
+  height: 20dvh;
+  gap: 0px;
+  border-left: white;
+  border-style: solid;
+  border-top-width: 0;
+  border-left-width: 0;
+  border-bottom-width: 0;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+.validadores-section .metricas .metrica .parte-izquierda h1, .validadores-section .comentarios .metrica .parte-izquierda h1 {
+  font-size: 5em;
+  padding: 0px;
+  margin: 0px;
+  justify-self: center;
+  vertical-align: middle;
+}
+.validadores-section .metricas .metrica .parte-izquierda h3, .validadores-section .comentarios .metrica .parte-izquierda h3 {
+  margin: 0px;
+  padding: 0px;
+  vertical-align: middle;
+}
+.validadores-section .metricas .metrica .parte-derecha, .validadores-section .comentarios .metrica .parte-derecha {
+  width: 50%;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  padding: 0 50px;
+  display: grid;
+}
+.validadores-section .metricas .metrica .parte-derecha h3, .validadores-section .comentarios .metrica .parte-derecha h3 {
+  justify-content: center;
+  margin: 0 auto;
+  vertical-align: center;
+}
+.validadores-section .comentarios {
+  padding-top: 30px;
+}
+.validadores-section .comentarios h1 {
+  font-size: 2.5em;
+}
+
+.validadores-section.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.validadores-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(94, 23, 235, 0.8); /* oscurece */
+  z-index: 1;
+}
+
 .equipo-section .equipo-cards-section {
   padding-top: 10px;
 }
@@ -242,6 +449,11 @@ body {
 .equipo-section .equipo-cards-section div p {
   font-size: 1.1em;
   color: rgb(100, 100, 100);
+}
+
+.equipo-section.active {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .formulario-contacto-section {
@@ -294,6 +506,11 @@ body {
   width: auto;
   padding: 20px;
   border-radius: 35px;
+}
+
+.formulario-contacto-section.active {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .footer {

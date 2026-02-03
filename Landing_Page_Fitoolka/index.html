@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/main.css">
+    <script src="js/script.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
@@ -24,17 +25,24 @@
     <main class="main-section" id="main-section">
         <article>
             <div class="first-section">
-                <h1>Tu Asesor Financiero de Bolsillo</h1>
-                <p>Fitoolka orquesta tus inversiones de manera inteligente.<br>Sin importar el tamaño de tu capital, te ayudamos a hacer crecer<br>tu dinero con estrategias personalizadas y asesoría profesional.</p>
-                <br>
-                <input type="text" placeholder="¿Cuál es tu objetivo financiero?"><br>
-                <br>
-                <button>¡Estoy listo!</button>
+                <div class="text-section">
+                    <h1>Tu Asesor Financiero de Bolsillo</h1>
+                    <p>Fitoolka orquesta tus inversiones de manera inteligente.<br>Sin importar el tamaño de tu capital, te ayudamos a hacer crecer<br>tu dinero con estrategias personalizadas y asesoría profesional.<br><br>¿Cuál es tu objetivo financiero?</p>
+                    <div class="autocomplete">
+                    <input type="text" placeholder="¿Cuál es tu objetivo financiero?" id="input-objetivo-financiero" autocomplete="off"><br>
+                    <div id="autocomplete-list" class="autocomplete-items">
+                    </div>
+                    </div>
+                    <br>
+                    <br>
+                    <button>¡Estoy listo!</button>
+
+                </div>
             </div>
         </article>
         <section class="pilares-section"id="pilares-section">
-            <h2>Los tres pilares fundamentales de Fitoolka</h2>
-            <p>Bajo estos pilares, nos esforzamoso en brindarte una experiencia financiera personalizada y diversa.</p>
+            <h2>Los tres servicios de Fitoolka</h2>
+            <p>Bajo estos servicios, nos esforzamos en brindarte una experiencia financiera personalizada y diversa.</p>
             <div class="card-pilares-section">
                 <div class="pilar">
                     <br>
@@ -105,6 +113,55 @@
             
             </div>
             
+        </section>
+        <section class="validadores-section">
+            <div class="validadores-section-texto-inicial">
+            <h1>¿Por qué Fitoolka?</h1>
+            <h2>Nuestra misión es ayudarte, y cada día lo hacemos realidad.</h2>
+            </div>
+            <div class="validadores-contenedor">
+                <div class="metricas">
+                <div class="metrica">
+                    <div class="parte-izquierda">
+                        <h1>+200</h1>
+                        <h3>Millones asesorados para inversion en productos confiables</h3>
+                    </div>
+                    <div class="parte-derecha">
+                        <h3>Creemos que la mejor forma de ayudar es educando, sirviendo y acompañando, y lo estamos logrando</h3>
+                    </div>
+                </div>
+                <div class="metrica">
+                    <div class="parte-izquierda">
+                        <h1>+55</h1>
+                        <h3>Millones en activos y valores bajo gestión</h3>
+                    </div>
+                    <div class="parte-derecha">
+                        <h3>Cuando educar, servir y acompañar no basta, colaboramos con nuestros clientes para convertir los objetivos y metas en una realidad</h3>
+                    </div>
+                </div>
+                <div class="metrica">
+                    <div class="parte-izquierda">
+                        <h1>+5</h1>
+                        <h3>Años de experiencia en el sector</h3>
+                    </div>
+                    <div class="parte-derecha">
+                        <h3>Nuestros usuarios merecen un equipo de profesionales capacitados y con experiencia enfrentando y superando los mismos retos que ellos</h3>
+                    </div>
+                </div>
+                <div class="metrica">
+                    <div class="parte-izquierda">
+                        <h3>Desde el año</h3>
+                        <h1>2023</h1>
+                    </div>
+                    <div class="parte-derecha">
+                        <h3>Creemos que la mejor forma de ayudar es educando, sirviendo y acompañando, y lo estamos logrando</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="comentarios">
+                <h1>Aquí van los comentarios...</h1>
+            </div>
+            </div>
         </section>
         <section class="equipo-section" id="equipo-section">
             <h2>Nuestro Equipo</h2>
