@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,16 +9,24 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
-    <title>Document</title>
+    <title>Fitoolka: Tu Asesor Financiero de Bolsillo</title>
+    <link rel="icon" href="assets/svg/logo_fitoolka.svg" type="image/png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18/build/css/intlTelInput.min.css" />
+
+
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18/build/js/intlTelInput.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18/build/js/utils.js"></script>
+
 </head>
+
 <body>
     <nav class="navbar">
         <img src="./assets/svg/logo_fitoolka.svg" alt="">
-        <div class = "nav-buttons">
+        <div class="nav-buttons">
             <a class="inicio-button" href="#main-section">Inicio</a>
-            <a class="planes-button" href="#pilares-section">Pilares</a>
-            <a class="contacto-button" href="#planes-section">Planes</a>
-            <a class="nosotros-button" href="#equipo-section">Nosotros</a>
+            <a class="planes-button" href="#servicios-section">Servicios</a>
+            <a class="contacto-button" href="#validadores-section">¿Por qué nosotros?</a>
+            <a class="nosotros-button" href="#equipo-section">Nuestro Equipo</a>
             <a class="contacto-button" href="#formulario-contacto-section">Contacto</a>
         </div>
         <div class="separador-lateral"></div>
@@ -27,19 +36,58 @@
             <div class="first-section">
                 <div class="text-section">
                     <h1>Tu Asesor Financiero de Bolsillo</h1>
-                    <p>Fitoolka orquesta tus inversiones de manera inteligente.<br>Sin importar el tamaño de tu capital, te ayudamos a hacer crecer<br>tu dinero con estrategias personalizadas y asesoría profesional.<br><br>¿Cuál es tu objetivo financiero?</p>
+                    <p>Fitoolka orquesta tus inversiones de manera inteligente.<br>Sin importar el tamaño de tu capital,
+                        te ayudamos a hacer crecer<br>tu dinero con estrategias personalizadas y asesoría
+                        profesional.<br><br>¿Cuál es tu objetivo financiero?</p>
                     <div class="autocomplete">
-                    <input type="text" placeholder="¿Cuál es tu objetivo financiero?" id="input-objetivo-financiero" autocomplete="off"><br>
-                    <div id="autocomplete-list" class="autocomplete-items">
-                    </div>
+                        <input type="text" placeholder="¿Cuál es tu objetivo financiero?" id="input-objetivo-financiero"
+                            autocomplete="off"><br>
+                        <div id="autocomplete-list" class="autocomplete-items">
+                        </div>
                     </div>
                     <br>
                     <br>
-                    <button>¡Estoy listo!</button>
+                    <button id="btn-abrir-modal">¡Estoy listo!</button>
 
                 </div>
             </div>
         </article>
+        <section class="servicios-section" id="servicios-section">
+            <div class="texto-inicial-servicios">
+                <h1>Los servicios que ofrecemos</h1>
+                <h2>Con estos servicios, te acercamos día a día a tu objetivo.</h2>
+            </div>
+            <br>
+            <div class="servicios">
+                <div class="servicio">
+                    <div class="imagen"><img src="assets/img/asesoria-imagen.png" alt=""></div>
+                    <div class="texto">
+                        <h3>Asesoría</h3>
+                        <p>Asesoramiento personalizado para tomar decisiones financieras inteligentes.</p>
+                    </div>
+                </div>
+                <br>
+                <div class="servicio" id="servicio-centro">
+                    <div class="texto" id="texto-centro">
+                        <h3>Orquestación de inversiones</h3>
+                        <p>Te ayudamos a diversificar tus inversiones para que alcances tus objetivos</p>
+                    </div>
+                    <div class="imagen" id="imagen-centro"><img src="assets/img/orquestacion-inversiones.jpg" alt="">
+                    </div>
+                </div>
+                <br>
+                <div class="servicio">
+                    <div class="imagen"><img src="assets/img/facilidad-movimientos.jpg" alt=""></div>
+                    <div class="texto">
+                        <h3>Facilidad en movimientos financieros</h3>
+                        <p>Realiza despliegues y transacciones financieras de manera rápida y segura.</p>
+                    </div>
+                </div>
+            </div>
+            <br>
+
+        </section>
+        <!--
         <section class="pilares-section"id="pilares-section">
             <h2>Los tres servicios de Fitoolka</h2>
             <p>Bajo estos servicios, nos esforzamos en brindarte una experiencia financiera personalizada y diversa.</p>
@@ -114,57 +162,68 @@
             </div>
             
         </section>
-        <section class="validadores-section">
+        -->
+        <section class="validadores-section" id="validadores-section">
             <div class="validadores-section-texto-inicial">
-            <h1>¿Por qué Fitoolka?</h1>
-            <h2>Nuestra misión es ayudarte, y cada día lo hacemos realidad.</h2>
+                <h1>¿Por qué Fitoolka?</h1>
+                <h2>Nuestra misión es ayudarte, y cada día lo hacemos realidad.</h2>
             </div>
             <div class="validadores-contenedor">
                 <div class="metricas">
-                <div class="metrica">
-                    <div class="parte-izquierda">
-                        <h1>+200</h1>
-                        <h3>Millones asesorados para inversion en productos confiables</h3>
+                    <div class="metrica">
+                        <div class="parte-izquierda">
+                            <h1>+200</h1>
+                            <h3>Millones asesorados para inversion en productos confiables</h3>
+                        </div>
+                        <div class="parte-derecha">
+                            <h3>Creemos que la mejor forma de ayudar es educando, sirviendo y acompañando, y lo estamos
+                                logrando</h3>
+                        </div>
                     </div>
-                    <div class="parte-derecha">
-                        <h3>Creemos que la mejor forma de ayudar es educando, sirviendo y acompañando, y lo estamos logrando</h3>
-                    </div>
-                </div>
-                <div class="metrica">
-                    <div class="parte-izquierda">
-                        <h1>+55</h1>
-                        <h3>Millones en activos y valores bajo gestión</h3>
-                    </div>
-                    <div class="parte-derecha">
-                        <h3>Cuando educar, servir y acompañar no basta, colaboramos con nuestros clientes para convertir los objetivos y metas en una realidad</h3>
-                    </div>
-                </div>
-                <div class="metrica">
-                    <div class="parte-izquierda">
-                        <h1>+5</h1>
-                        <h3>Años de experiencia en el sector</h3>
-                    </div>
-                    <div class="parte-derecha">
-                        <h3>Nuestros usuarios merecen un equipo de profesionales capacitados y con experiencia enfrentando y superando los mismos retos que ellos</h3>
+                    <div class="metrica">
+                        <div class="parte-izquierda">
+                            <h1>+55</h1>
+                            <h3>Millones en activos y valores bajo gestión</h3>
+                        </div>
+                        <div class="parte-derecha">
+                            <h3>Cuando educar, servir y acompañar no basta, colaboramos con nuestros clientes para
+                                convertir los objetivos y metas en una realidad</h3>
+                        </div>
                     </div>
                 </div>
-                <div class="metrica">
-                    <div class="parte-izquierda">
-                        <h3>Desde el año</h3>
-                        <h1>2023</h1>
+                <div class="metricas">
+                    <div class="metrica">
+                        <div class="parte-izquierda">
+                            <h1>+5</h1>
+                            <h3>Años de experiencia en el sector</h3>
+                        </div>
+                        <div class="parte-derecha">
+                            <h3>Nuestros usuarios merecen un equipo de profesionales capacitados y con experiencia
+                                enfrentando y superando los mismos retos que ellos</h3>
+                        </div>
                     </div>
-                    <div class="parte-derecha">
-                        <h3>Creemos que la mejor forma de ayudar es educando, sirviendo y acompañando, y lo estamos logrando</h3>
+                    <div class="metrica">
+                        <div class="parte-izquierda">
+                            <h3>Desde el año</h3>
+                            <h1>2023</h1>
+                        </div>
+                        <div class="parte-derecha">
+                            <h3>Creemos que la mejor forma de ayudar es educando, sirviendo y acompañando, y lo
+                                estamos logrando</h3>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="comentarios">
-                <h1>Aquí van los comentarios...</h1>
-            </div>
             </div>
         </section>
+        <section class="objetivo-section">
+            <h1>Hablemos de tu siguiente objetivo financiero</h1>
+            <p>Déjanos aquí lo que tienes en mente, así podremos diseñarte un plan personalizado.</p>
+            <textarea name="" id="texto-objetivo"></textarea>
+            <br>
+            <button id="btn-abrir-modal-objetivo">Estoy listo!</button>
+        </section>
         <section class="equipo-section" id="equipo-section">
-            <h2>Nuestro Equipo</h2>
+            <h1>Nuestro Equipo</h1>
             <p>Conoce a las personas que hacen posible Fitoolka.</p>
             <div class="equipo-cards-section">
                 <div>
@@ -185,68 +244,98 @@
             </div>
         </section>
         <section class="formulario-contacto-section" id="formulario-contacto-section">
-            <h2>Y tú, ¿qué esperas para dar el primer paso?</h2>
+            <h1>Y tú, ¿qué esperas para dar el primer paso?</h1>
             <p>Déjanos tus datos y nos contactaremos contigo lo antes posible.</p>
             <div class="formulario-section">
                 <div class="formulario-div">
                     <form action="" class="formulario_contacto-form">
-                    <div class="fila-formulario">
-                        <div class="campo-formulario">
-                        <h4>Nombre Completo</h4>
-                        <input type="text" placeholder="Nombre Completo">
+                        <div class="fila-formulario">
+                            <div class="campo-formulario">
+                                <h4>Nombre Completo</h4>
+                                <input type="text" placeholder="Nombre Completo">
+                            </div>
+                            <div class="campo-formulario">
+                                <h4>Número de Celular</h4>
+                                <input type="tel" placeholder="Número de celular">
+                            </div>
                         </div>
-                        <div class="campo-formulario">
-                            <h4>Número de Celular</h4>
-                            <input type="tel" placeholder="Número de celular">
+                        <div class="fila-formulario">
+                            <div class="campo-formulario">
+                                <h4>Correo Electrónico</h4>
+                                <input type="email" placeholder="Correo Electrónico">
+                            </div>
+                            <div class="campo-formulario">
+                                <h4>Ciudad de Residencia</h4>
+                                <input type="text" placeholder="Ciudad de Residencia">
+                            </div>
                         </div>
-                    </div>
-                    <div class="fila-formulario">
-                        <div class="campo-formulario">
-                            <h4>Correo Electrónico</h4>
-                            <input type="email" placeholder="Correo Electrónico">
-                        </div>
-                        <div class="campo-formulario">
-                            <h4>Ciudad de Residencia</h4>
-                            <input type="text" placeholder="Ciudad de Residencia">
-                        </div>
-                    </div>
-                <br>
-                <div class="fila-formulario"><button type="submit">Quiero que me contacten</button></div>
-                </form>
-                </div>   
+                        <br>
+                        <div class="fila-formulario"><button type="submit">Quiero que me contacten</button></div>
+                    </form>
+                </div>
             </div>
         </section>
     </main>
     <footer class="footer">
         <div class="informacion-section">
-            <div class = "enlaces_rapidos">
+            <div class="enlaces_rapidos">
                 <h4>Enlaces Rápidos</h4>
                 <div class="lista_enlaces">
-                    <div><a href="#pilares-section">Pilares</a></div>
-                    <div><a href="#planes-section">Planes</a></div>
+                    <div><a href="#servicios-section">Servicios</a></div>
+                    <div><a href="#validadores-section">¿Por qué nosotros?</a></div>
                     <div><a href="#equipo-section">Equipo</a></div>
                     <div><a href="#formulario-contacto-section">Contacto</a></div>
                 </div>
 
             </div>
-            <div class = "enlaces_rapidos">
+            <div class="enlaces_rapidos">
                 <h4>Legal</h4>
                 <div class="lista_enlaces">
-                <div><a href="#terminos-y-condiciones">Términos y Condiciones</a></div>
-                <div><a href="#politica-de-privacidad">Política de Privacidad</a></div>
-                <div><a href="#politica-de-cookies">Política de Cookies</a></div>
+                    <div><a href="#terminos-y-condiciones">Términos y Condiciones</a></div>
+                    <div><a href="#politica-de-privacidad">Política de Privacidad</a></div>
+                    <div><a href="#politica-de-cookies">Política de Cookies</a></div>
                 </div>
             </div>
-            <div class = "enlaces_rapidos">
+            <div class="enlaces_rapidos">
                 <h4>Contacto</h4>
                 <div><a href="tel:+573001234567">+57 300 123 4567</a></div>
                 <div><a href="mailto:contacto@fitoolka.com">contacto@fitoolka.com</a></div>
-                <div><p>Bogotá, Colombia</p></div>
+                <div>
+                    <p>Bogotá, Colombia</p>
+                </div>
             </div>
         </div>
         <div class="final-section">
             <p>© 2026 Fitoolka. Todos los derechos reservados.</p>
         </div>
     </footer>
+    <dialog id="modal-formulario" class="modal">
+        <form method="dialog" class="modal-form">
+
+            <h1>Cuéntanos sobre ti</h1>
+            <h3>Déjanos tus datos para contactarnos contigo y brindarte asesoría personalizada.</h3>
+            <br>
+            <div class="campos">
+                <label>
+                    Nombre &nbsp;
+                    <input type="text" required>
+                </label>
+                <div class="phone-field">
+                    <label>
+                        Celular &nbsp;
+                    <input type="tel" placeholder="300 123 4567" id="phone" value="+" required>
+                    </label>
+                </div>
+            </div>
+
+            <menu class="modal-actions">
+                <button type="button" id="btn-cancelar-dialog">Cancelar</button>
+                <button type="submit">Continuar</button>
+            </menu>
+
+        </form>
+    </dialog>
+
 </body>
+
 </html>

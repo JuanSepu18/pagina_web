@@ -1,4 +1,4 @@
-const reveals = document.querySelectorAll('.pilares-section, .planes-section, .equipo-section, .formulario-contacto-section, .validadores-section');
+const reveals = document.querySelectorAll('.pilares-section, .planes-section, .equipo-section, .formulario-contacto-section, .validadores-section, .servicios-section, .objetivo-section');
 
 const observer = new IntersectionObserver(
   (entries) => {
@@ -13,6 +13,22 @@ const observer = new IntersectionObserver(
     threshold: 0.2
   }
 );
+
+const dialog = document.getElementById("modal-formulario");
+const btnAbrir = document.getElementById("btn-abrir-modal");
+const btnAbrirObjetivo = document.getElementById("btn-abrir-modal-objetivo")
+
+btnAbrir.addEventListener("click", () => {
+  dialog.showModal();
+});
+
+btnAbrirObjetivo.addEventListener("click", () => {
+  dialog.showModal();
+});
+
+document.getElementById("btn-cancelar-dialog").addEventListener("click", () => {
+  dialog.close();
+})
 
 reveals.forEach(el => observer.observe(el));
 
@@ -153,10 +169,10 @@ document.addEventListener("click", (e) => {
     lista.innerHTML = "";
     input.closest(".autocomplete").classList.remove("open");
   }
-  
+
 });
 
-input.addEventListener("input",()=>{
+input.addEventListener("input", () => {
   const valor = input.value.toLowerCase();
 
   lista.innerHTML = "";
@@ -164,7 +180,7 @@ input.addEventListener("input",()=>{
   const contenedor = input.closest(".autocomplete");
   contenedor.classList.remove("open");
 
-  if(valor === "") return;
+  if (valor === "") return;
 
   const resultados = objetivosFinancieros.filter(objetivo =>
     objetivo.toLowerCase().includes(valor)
@@ -187,27 +203,153 @@ document.addEventListener("DOMContentLoaded", () => {
   contenedor.classList.remove("open");
   input.value = "";
 
-  // Elegir objetivo aleatorio
-  const objetivoAleatorio =
-    objetivosFinancieros[
-      Math.floor(Math.random() * objetivosFinancieros.length)
-    ];
-
-  // Efecto de escritura
+  let objetivoActual = "";
   let index = 0;
-  input.placeholder = "";
 
-  const velocidad = 100; // ms por letra
+  const velocidadEscritura = 150; // ms por letra
+  const pausaEntreObjetivos = 1500; // ms antes de cambiar
 
-  const escribir = () => {
-    if (index < objetivoAleatorio.length) {
-      input.placeholder += objetivoAleatorio.charAt(index);
+  function elegirObjetivo() {
+    let nuevo;
+    do {
+      nuevo =
+        objetivosFinancieros[
+          Math.floor(Math.random() * objetivosFinancieros.length)
+        ];
+    } while (nuevo === objetivoActual); // evita repetir seguido
+
+    objetivoActual = nuevo;
+    index = 0;
+    input.placeholder = "";
+  }
+
+  function escribir() {
+    if (index < objetivoActual.length) {
+      input.placeholder += objetivoActual.charAt(index);
       index++;
-      setTimeout(escribir, velocidad);
+      setTimeout(escribir, velocidadEscritura);
+    } else {
+      // Cuando termina de escribir
+      setTimeout(() => {
+        elegirObjetivo();
+        escribir();
+      }, pausaEntreObjetivos);
     }
-  };
+  }
 
+  // Inicio
+  elegirObjetivo();
+  escribir();
+});
+
+//MISMO BLOQUE QUE ANTES PERO PARA EL TEXTAREA
+
+document.addEventListener("DOMContentLoaded", () => {
+  const textarea = document.getElementById("texto-objetivo");
+  if (!textarea) return;
+
+  let objetivoActual = "";
+  let index = 0;
+  let animacionActiva = true;
+
+  const velocidadEscritura = 80; // ms por letra
+  const pausaEntreObjetivos = 1800; // ms
+
+  function elegirObjetivo() {
+    let nuevo;
+    do {
+      nuevo =
+        objetivosFinancieros[
+          Math.floor(Math.random() * objetivosFinancieros.length)
+        ];
+    } while (nuevo === objetivoActual);
+
+    objetivoActual = nuevo;
+    index = 0;
+    textarea.placeholder = "";
+  }
+
+  function escribir() {
+    if (!animacionActiva) return;
+
+    if (index < objetivoActual.length) {
+      textarea.placeholder += objetivoActual.charAt(index);
+      index++;
+      setTimeout(escribir, velocidadEscritura);
+    } else {
+      setTimeout(() => {
+        if (!animacionActiva) return;
+        elegirObjetivo();
+        escribir();
+      }, pausaEntreObjetivos);
+    }
+  }
+
+  // Iniciar
+  elegirObjetivo();
   escribir();
 });
 
 
+const input_1 = document.querySelector("#phone");
+
+const iti = window.intlTelInput(input_1, {
+  initialCountry: "auto",
+  nationalMode: true,
+  preferredCountries: [
+    "co", // Colombia
+    "mx", // México
+    "ar", // Argentina
+    "cl", // Chile
+    "pe", // Perú
+    "ec", // Ecuador
+    "bo", // Bolivia
+    "py", // Paraguay
+    "uy", // Uruguay
+    "ve", // Venezuela
+    "pa", // Panamá
+    "cr", // Costa Rica
+    "gt", // Guatemala
+    "sv", // El Salvador
+    "hn", // Honduras
+    "ni", // Nicaragua
+    "do", // República Dominicana
+    "pr", // Puerto Rico
+    "br", // Brasil
+    "us"  // Estados Unidos
+  ],
+
+  autoInsertDialCode: true,
+  separateDialCode: false,
+  showSelectedDialCode: true,
+  formatOnDisplay: false,
+  utilsScript:
+    "https://cdn.jsdelivr.net/npm/intl-tel-input@18/build/js/utils.js",
+});
+
+
+input_1.addEventListener("input", () => {
+  if (!input_1.value.startsWith("+")) {
+    input_1.value = "+" + input.value.replace(/\+/g, "");
+  }
+  iti.setNumber(input_1.value);
+});
+
+// Evita borrar el +
+input_1.addEventListener("keydown", (e) => {
+  const cursor = input_1.selectionStart;
+
+  if (
+    (e.key === "Backspace" || e.key === "Delete") &&
+    cursor <= 1
+  ) {
+    e.preventDefault();
+  }
+});
+
+// Si hace focus y está vacío → pone +
+input_1.addEventListener("focus", () => {
+  if (input_1.value === "") {
+    input_1.value = "+";
+  }
+});

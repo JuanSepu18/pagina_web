@@ -69,13 +69,13 @@ body {
   margin: 0;
 }
 .main-section h1 {
-  font-size: 3.5em;
+  font-size: 4em;
   margin: 0;
   padding: 0;
   color: white;
 }
 .main-section p {
-  font-size: 1.5em;
+  font-size: 1.7em;
   margin: 20px 0;
   padding: 0;
   color: white;
@@ -181,7 +181,8 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(94, 23, 235, 0.8); /* oscurece */
+  background: rgba(94, 23, 235, 0.8);
+  /* oscurece */
   z-index: 1;
 }
 .main-section article button {
@@ -198,6 +199,91 @@ body {
   cursor: pointer;
   font-weight: bold;
   background-color: rgb(252.3964497041, 187.3076923077, 37.6035502959);
+}
+
+.servicios-section {
+  width: 100%;
+  height: auto;
+  padding: 50px 0;
+  text-align: center;
+  background-color: #f0f0f0;
+  scroll-margin-top: 70px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+  align-items: center;
+  justify-content: center;
+}
+.servicios-section h1 {
+  color: black;
+  font-size: 3em;
+}
+.servicios-section h2 {
+  color: rgb(100, 100, 100);
+  font-size: 2em;
+}
+.servicios-section .servicios {
+  justify-self: center;
+  margin-top: 2vw;
+}
+.servicios-section .servicios .servicio {
+  display: flex;
+  flex-direction: row;
+  height: 15vw;
+}
+.servicios-section .servicios .servicio .imagen {
+  height: 100%;
+  width: 25vw;
+}
+.servicios-section .servicios .servicio .imagen img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-bottom-left-radius: 5vw;
+  border-top-left-radius: 5vw;
+}
+.servicios-section .servicios .servicio .texto {
+  background-color: #e5dcf3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50vw;
+  border-bottom-right-radius: 5vw;
+  border-top-right-radius: 5vw;
+}
+.servicios-section .servicios .servicio .texto h3 {
+  font-size: 2.2em;
+  padding: 0;
+  margin: 0;
+}
+.servicios-section .servicios .servicio .texto p {
+  color: black;
+  padding: 0 10%;
+  font-size: 1.5em;
+}
+.servicios-section .servicios #imagen-centro img {
+  border-bottom-right-radius: 5vw;
+  border-top-right-radius: 5vw;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+.servicios-section .servicios #texto-centro {
+  background-color: #ffe7b0;
+  border-bottom-left-radius: 5vw;
+  border-top-left-radius: 5vw;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.servicios-section .servicios .servicio:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 5vw;
+  transition: 0.3s;
+}
+
+.servicios-section.active {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .pilares-section, .formulario-contacto-section, .equipo-section, .planes-section {
@@ -218,10 +304,11 @@ body {
   color: black;
 }
 .pilares-section p, .formulario-contacto-section p, .equipo-section p, .planes-section p {
-  font-size: 1.5em;
+  font-size: 2em;
   margin: 20px 0;
   padding: 0;
   color: rgb(100, 100, 100);
+  font-weight: bold;
 }
 .pilares-section .card-pilares-section, .formulario-contacto-section .card-pilares-section, .formulario-contacto-section .formulario-section, .equipo-section .card-pilares-section, .equipo-section .equipo-cards-section, .planes-section .card-pilares-section, .planes-section .planes-card-section {
   padding: 50px;
@@ -335,7 +422,7 @@ body {
 }
 .validadores-section .validadores-section-texto-inicial h1 {
   position: relative;
-  font-size: 3.5em;
+  font-size: 3em;
   margin: 0;
   padding: 0;
   z-index: 1;
@@ -343,23 +430,26 @@ body {
 .validadores-section .validadores-section-texto-inicial h2 {
   position: relative;
   z-index: 1;
+  font-size: 2em;
 }
 .validadores-section .validadores-contenedor {
   display: flex;
-  flex-direction: row;
 }
-.validadores-section .metricas, .validadores-section .comentarios {
+.validadores-section .metricas {
   width: 50%;
   gap: 50px;
   align-items: center;
   z-index: 1;
+  display: grid;
 }
-.validadores-section .metricas .metrica, .validadores-section .comentarios .metrica {
+.validadores-section .metricas .metrica {
   display: flex;
   align-items: center;
   vertical-align: center;
+  width: 827;
+  height: 300;
 }
-.validadores-section .metricas .metrica .parte-izquierda, .validadores-section .comentarios .metrica .parte-izquierda {
+.validadores-section .metricas .metrica .parte-izquierda {
   vertical-align: middle;
   justify-content: center;
   align-items: center;
@@ -375,19 +465,20 @@ body {
   padding-left: 50px;
   padding-right: 50px;
 }
-.validadores-section .metricas .metrica .parte-izquierda h1, .validadores-section .comentarios .metrica .parte-izquierda h1 {
+.validadores-section .metricas .metrica .parte-izquierda h1 {
   font-size: 5em;
   padding: 0px;
   margin: 0px;
   justify-self: center;
   vertical-align: middle;
 }
-.validadores-section .metricas .metrica .parte-izquierda h3, .validadores-section .comentarios .metrica .parte-izquierda h3 {
+.validadores-section .metricas .metrica .parte-izquierda h3 {
   margin: 0px;
   padding: 0px;
   vertical-align: middle;
+  font-size: 1.3em;
 }
-.validadores-section .metricas .metrica .parte-derecha, .validadores-section .comentarios .metrica .parte-derecha {
+.validadores-section .metricas .metrica .parte-derecha {
   width: 50%;
   justify-content: center;
   align-items: center;
@@ -395,16 +486,11 @@ body {
   padding: 0 50px;
   display: grid;
 }
-.validadores-section .metricas .metrica .parte-derecha h3, .validadores-section .comentarios .metrica .parte-derecha h3 {
+.validadores-section .metricas .metrica .parte-derecha h3 {
   justify-content: center;
   margin: 0 auto;
   vertical-align: center;
-}
-.validadores-section .comentarios {
-  padding-top: 30px;
-}
-.validadores-section .comentarios h1 {
-  font-size: 2.5em;
+  font-size: 1.3em;
 }
 
 .validadores-section.active {
@@ -416,10 +502,85 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(94, 23, 235, 0.8); /* oscurece */
+  background: rgba(94, 23, 235, 0.8);
+  /* oscurece */
   z-index: 1;
 }
 
+.objetivo-section {
+  width: 100%;
+  height: auto;
+  padding: 50px 0;
+  text-align: center;
+  background-color: #e5e7eb;
+  scroll-margin-top: 70px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+.objetivo-section h1 {
+  font-size: 3em;
+  color: black;
+}
+.objetivo-section p {
+  font-size: 2em;
+  margin: 20px 0;
+  padding: 0;
+  color: rgb(100, 100, 100);
+  font-weight: bold;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.objetivo-section input {
+  background-color: white;
+  height: 10vw;
+  width: 70vw;
+  border-radius: 30px;
+  margin: 40px;
+  text-align: left;
+  vertical-align: baseline;
+}
+.objetivo-section textarea {
+  background-color: white;
+  height: 10vw;
+  width: 70vw;
+  border-radius: 30px;
+  margin: 40px;
+  text-align: left;
+  vertical-align: baseline;
+  align-content: baseline;
+  font-size: 1.3em;
+  font-family: "Manrope", sans-serif;
+  padding: 20px;
+}
+.objetivo-section button {
+  background-color: #FDCB58;
+  border-style: none;
+  font-family: "Manrope", sans-serif;
+  font-size: 1.2em;
+  color: black;
+  width: auto;
+  padding: 20px;
+  border-radius: 35px;
+}
+.objetivo-section button:hover {
+  cursor: pointer;
+  font-weight: bold;
+  background-color: rgb(252.3964497041, 187.3076923077, 37.6035502959);
+}
+
+.objetivo-section.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.equipo-section h1 {
+  color: black;
+  font-size: 3em;
+}
+.equipo-section p {
+  font-size: 2em;
+}
 .equipo-section .equipo-cards-section {
   padding-top: 10px;
 }
@@ -441,7 +602,7 @@ body {
   padding-top: 10px;
   background-color: white;
 }
-.equipo-section .equipo-cards-section div h3 {
+.equipo-section .equipo-cards-section div h1 {
   font-size: 1.5em;
   margin: 10px 0 0 0;
   padding: 0px;
@@ -458,6 +619,10 @@ body {
 
 .formulario-contacto-section {
   background-color: #e5e7eb;
+}
+.formulario-contacto-section h1 {
+  color: black;
+  font-size: 3em;
 }
 .formulario-contacto-section .formulario-section {
   padding-top: 10px;
@@ -507,6 +672,11 @@ body {
   width: auto;
   padding: 20px;
   border-radius: 35px;
+}
+.formulario-contacto-section .formulario-section .formulario-div button:hover {
+  cursor: pointer;
+  font-weight: bold;
+  background-color: rgb(252.3964497041, 187.3076923077, 37.6035502959);
 }
 
 .formulario-contacto-section.active {
@@ -561,4 +731,78 @@ body {
 }
 .footer .final-section p {
   color: #c2c2c2;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+.modal {
+  border-radius: 5vw;
+  justify-items: center;
+  align-items: center;
+  overflow: visible;
+}
+.modal h3 {
+  justify-content: center;
+  text-align: center;
+}
+.modal[open] {
+  animation: modalFadeIn 0.6s ease forwards;
+}
+.modal .modal-form {
+  height: 17vw;
+  width: 50vw;
+  justify-items: center;
+  align-items: center;
+}
+.modal .modal-form label {
+  font-size: 1.2em;
+}
+.modal .modal-form input {
+  align-self: center;
+  width: 15vw;
+  height: 3vw;
+  border: none;
+  padding: 0px;
+  margin: 0px;
+  font-size: 1em;
+  text-align: center;
+  background-color: #e5e7eb;
+  border-radius: 5vw;
+}
+.modal .modal-form .campos {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+}
+.modal .modal-form .modal-actions {
+  margin-top: 30px;
+  display: flex;
+  gap: 30px;
+  padding: 0;
+}
+.modal .modal-form button {
+  background-color: #FDCB58;
+  border-style: none;
+  font-family: "Manrope", sans-serif;
+  font-size: 1.2em;
+  color: black;
+  width: 160px;
+  padding: 20px;
+  border-radius: 35px;
+}
+.modal .modal-form button:hover {
+  cursor: pointer;
+  font-weight: bold;
+  background-color: rgb(252.3964497041, 187.3076923077, 37.6035502959);
+}
+.modal .modal-form #btn-cancelar-dialog {
+  background-color: #ff9c9c;
 }/*# sourceMappingURL=main.css.map */
