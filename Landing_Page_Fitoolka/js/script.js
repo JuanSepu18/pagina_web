@@ -1,4 +1,4 @@
-const reveals = document.querySelectorAll('.pilares-section, .planes-section, .equipo-section, .formulario-contacto-section, .validadores-section, .servicios-section, .objetivo-section');
+const reveals = document.querySelectorAll('.pilares-section, .planes-section, .equipo-section, .formulario-contacto-section, .validadores-section, .servicios-section, .objetivo-section, .comentarios-section');
 
 const observer = new IntersectionObserver(
   (entries) => {

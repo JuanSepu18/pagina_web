@@ -605,6 +605,95 @@ body {
     z-index: 1;
 }
 
+.comentarios-section {
+    width: 100%;
+    height: auto;
+    padding: 50px 0;
+    text-align: center;
+    justify-content: center;
+    background-color: #f0f0f0;
+    scroll-margin-top: $navbar-height;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+    display: flex;
+    flex-direction: column;
+
+    h1 {
+        color: black;
+        font-size: 3em;
+    }
+
+    h2 {
+        color: rgb(100, 100, 100);
+        font-size: 2em;
+    }
+
+    h3 {
+        color: $quaternary;
+        font-size: 1.8em;
+    }
+
+    p {
+        color: black;
+        padding: 0 10%;
+        font-size: 1.5em;
+    }
+
+    .comentarios-container{
+        width: 60%;
+        display: flex;
+        justify-content: center;
+        justify-self: center;
+        .boton-adelante{
+            display: flex;
+            margin:0px;
+            padding:0px;
+            background-color: grey;
+            border-top-right-radius: 1em;
+        }
+        .boton-atras{
+            display: flex;
+            margin: 0px;
+            padding: 0px;
+            background-color: grey;
+            border-top-left-radius: 1em;
+        }
+        svg{
+            width:50px;
+            justify-self: center;
+        }
+        .comentario{
+            background-color: white;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+    }
+
+    .barra-navegacion{
+        background-color: grey;
+        width: 60%;
+        height:5%;
+        justify-self: center;
+        border-bottom-left-radius: 1em;
+        border-bottom-right-radius: 1em;
+        display:flex;
+        flex-direction: row;
+        gap:20px;
+        padding-top:10px;
+        padding-bottom: 10px;
+        justify-content: center;
+        svg{
+            width: 10px;
+        }
+    }
+}
+
+.comentarios-section.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 .objetivo-section {
     width: 100%;
     height: auto;
@@ -899,8 +988,8 @@ body {
     justify-items: center;
     align-items: center;
     overflow: visible;
-    
-    h3{
+
+    h3 {
         justify-content: center;
         text-align: center;
     }
@@ -942,7 +1031,7 @@ body {
             margin-top: 30px;
             display: flex;
             gap: 30px;
-            padding:0;
+            padding: 0;
         }
 
         button {
@@ -968,5 +1057,3 @@ body {
 
     }
 }
-
-
