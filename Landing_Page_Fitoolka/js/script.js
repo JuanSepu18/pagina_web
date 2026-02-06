@@ -214,7 +214,7 @@ document.addEventListener("DOMContentLoaded", () => {
     do {
       nuevo =
         objetivosFinancieros[
-          Math.floor(Math.random() * objetivosFinancieros.length)
+        Math.floor(Math.random() * objetivosFinancieros.length)
         ];
     } while (nuevo === objetivoActual); // evita repetir seguido
 
@@ -260,7 +260,7 @@ document.addEventListener("DOMContentLoaded", () => {
     do {
       nuevo =
         objetivosFinancieros[
-          Math.floor(Math.random() * objetivosFinancieros.length)
+        Math.floor(Math.random() * objetivosFinancieros.length)
         ];
     } while (nuevo === objetivoActual);
 
@@ -353,3 +353,101 @@ input_1.addEventListener("focus", () => {
     input_1.value = "+";
   }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const contenedor = document.querySelector(".comentarios");
+  const comentarios = document.querySelectorAll(".comentario");
+  const btnPrev = document.querySelector(".boton-atras");
+  const btnNext = document.querySelector(".boton-adelante");
+  const barra = document.querySelector(".barra-navegacion");
+
+  if (!contenedor || comentarios.length === 0) return;
+
+  // 1️⃣ Crear track dinámicamente
+  const track = document.createElement("div");
+  track.classList.add("comentarios-track");
+
+  comentarios.forEach(comentario => {
+    track.appendChild(comentario);
+  });
+
+  contenedor.appendChild(track);
+
+  let index = 0;
+  const total = comentarios.length;
+
+  function actualizarSlider() {
+    track.style.transform = `translateX(-${index * 100}%)`;
+    actualizarBarra();
+  }
+
+  btnNext.addEventListener("click", () => {
+    index = (index + 1) % total;
+    actualizarSlider();
+  });
+
+  btnPrev.addEventListener("click", () => {
+    index = (index - 1 + total) % total;
+    actualizarSlider();
+  });
+
+  // Autoplay
+  setInterval(() => {
+    index = (index + 1) % total;
+    actualizarSlider();
+  }, 6000);
+
+  // =============================
+  // BARRA DE NAVEGACIÓN
+  // =============================
+  if (!barra) return;
+
+  barra.innerHTML = "";
+
+  comentarios.forEach((_, i) => {
+    const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    svg.setAttribute("viewBox", "0 0 16 16");
+
+    const circle = document.createElementNS(
+      "http://www.w3.org/2000/svg",
+      "circle"
+    );
+    circle.setAttribute("cx", "8");
+    circle.setAttribute("cy", "8");
+    circle.setAttribute("r", "8");
+
+    svg.appendChild(circle);
+
+    svg.addEventListener("click", () => {
+      index = i;
+      actualizarSlider();
+    });
+
+    barra.appendChild(svg);
+  });
+
+  function actualizarBarra() {
+    const dots = barra.querySelectorAll("svg");
+    dots.forEach((dot, i) => {
+      dot.classList.toggle("active", i === index);
+    });
+  }
+
+  // ✅ INICIALIZACIÓN CORRECTA
+  actualizarSlider();
+
+  let startX = 0;
+
+  track.addEventListener("touchstart", e => {
+    startX = e.touches[0].clientX;
+  });
+
+  track.addEventListener("touchend", e => {
+    const endX = e.changedTouches[0].clientX;
+    if (startX - endX > 50) btnNext.click();
+    if (endX - startX > 50) btnPrev.click();
+  });
+});
+
+
+
