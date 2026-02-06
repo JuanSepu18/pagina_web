@@ -347,7 +347,7 @@ input_1.addEventListener("keydown", (e) => {
   }
 });
 
-// Si hace focus y está vacío → pone +
+// Si hace focus y está vacío pone +
 input_1.addEventListener("focus", () => {
   if (input_1.value === "") {
     input_1.value = "+";
@@ -363,7 +363,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (!contenedor || comentarios.length === 0) return;
 
-  // 1️⃣ Crear track dinámicamente
+  // Crear track dinámicamente
   const track = document.createElement("div");
   track.classList.add("comentarios-track");
 
@@ -397,9 +397,8 @@ document.addEventListener("DOMContentLoaded", () => {
     actualizarSlider();
   }, 6000);
 
-  // =============================
   // BARRA DE NAVEGACIÓN
-  // =============================
+
   if (!barra) return;
 
   barra.innerHTML = "";
@@ -432,8 +431,7 @@ document.addEventListener("DOMContentLoaded", () => {
       dot.classList.toggle("active", i === index);
     });
   }
-
-  // ✅ INICIALIZACIÓN CORRECTA
+  
   actualizarSlider();
 
   let startX = 0;
