@@ -745,7 +745,6 @@ body {
 @media (max-width: 768px) {
   .comentarios-section .comentarios-container {
     width: 90%;
-    margin: 0 auto;
   }
 }
 .comentarios-section .comentarios-container .boton-adelante {
