@@ -719,6 +719,12 @@ body {
   display: flex;
   flex-direction: column;
 }
+@media (max-width: 768px) {
+  .comentarios-section .comentarios-container-father {
+    display: flex;
+    justify-content: center;
+  }
+}
 .comentarios-section h1 {
   color: black;
   font-size: 3em;
