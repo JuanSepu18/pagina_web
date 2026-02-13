@@ -53,7 +53,7 @@ body {
 @media (max-width: 768px) {
   .navbar {
     padding-bottom: 5%;
-    position: relative;
+    position: sticky;
   }
 }
 .navbar img {

@@ -62,7 +62,7 @@ body {
 
     @media (max-width: $mobile-breakpoint) {
         padding-bottom: 5%;
-        position: relative;
+        position: sticky;
     }
 
     img {
