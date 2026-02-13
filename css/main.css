@@ -180,7 +180,9 @@ body {
 @media (max-width: 768px) {
   .main-section article .first-section {
     padding: 10px;
-    padding-top: 0px;
+    padding-top: 20px;
+    padding-bottom: 10%;
+    height: 100%;
   }
 }
 .main-section article .first-section .text-section {

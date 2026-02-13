@@ -180,7 +180,9 @@ body {
             justify-content: space-between;
             @media (max-width: $mobile-breakpoint) {
                 padding: 10px;
-                padding-top: 0px;
+                padding-top: 20px;
+                padding-bottom: 10%;
+                height:100%;
             }
 
             .text-section {
