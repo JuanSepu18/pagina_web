@@ -62,7 +62,8 @@ body {
 
     @media (max-width: $mobile-breakpoint) {
         padding-bottom: 5%;
-        }
+        position: relative;
+    }
 
     img {
         height: 50px;
@@ -179,7 +180,7 @@ body {
             justify-content: space-between;
             @media (max-width: $mobile-breakpoint) {
                 padding: 10px;
-                padding-top: 70px;
+                padding-top: 0px;
             }
 
             .text-section {
