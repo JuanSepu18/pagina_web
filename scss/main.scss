@@ -349,8 +349,7 @@ body {
             height: 100%;
             margin: 10px;
             padding: 0;
-            margin-left: 40px;
-            margin-right:40px;
+            margin: 0 auto;
         }
         .servicio {
             display: flex;
@@ -1211,7 +1210,7 @@ $color-barra-navegacion-comentarios: $quaternary;
         @media (max-width: $mobile-breakpoint) {
             padding-left:5%;
             padding-right: 5%;
-            padding-bottom: 0;
+            padding-bottom: 5%;
         }
         
 
