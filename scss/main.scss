@@ -798,6 +798,7 @@ $color-barra-navegacion-comentarios: $quaternary;
         justify-self: center;
         @media (max-width: $mobile-breakpoint) {
             width:90%;
+            margin: 0 auto;
         }
 
         .boton-adelante {
