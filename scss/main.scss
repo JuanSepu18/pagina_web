@@ -1300,6 +1300,7 @@ $color-barra-navegacion-comentarios: $quaternary;
         @media (max-width: $mobile-breakpoint) {
             padding: 0;
             margin: 0 auto;
+            justify-self: center;
         }
     }
 
