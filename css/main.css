@@ -725,6 +725,12 @@ body {
     justify-content: center;
   }
 }
+@media (max-width: 768px) {
+  .comentarios-section .barra-navegacion-father {
+    display: flex;
+    justify-content: center;
+  }
+}
 .comentarios-section h1 {
   color: black;
   font-size: 3em;

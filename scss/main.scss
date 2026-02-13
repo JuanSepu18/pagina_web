@@ -775,6 +775,13 @@ $color-barra-navegacion-comentarios: $quaternary;
             justify-content: center;
         }
     }
+
+    .barra-navegacion-father{
+        @media (max-width: $mobile-breakpoint) {
+            display: flex;
+            justify-content: center;
+        }
+    }
     h1 {
         color: black;
         font-size: 3em;
