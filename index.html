@@ -22,12 +22,33 @@
 <body>
     <nav class="navbar">
         <img src="./assets/svg/logo_fitoolka.svg" alt="">
+        <svg class="svg-abrir-menu-hamburguesa" onclick=toggleMenuHamburguesa() viewBox="0 0 24 24" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+                <g id="Menu / Menu_Alt_01">
+                    <path id="Vector" d="M12 17H19M5 12H19M5 7H19" stroke="#000000" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round"></path>
+                </g>
+            </g>
+        </svg>
+        <svg class="svg-cerrar-menu-hamburguesa" onclick=toggleMenuHamburguesa() viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+                <path
+                    d="M20.7457 3.32851C20.3552 2.93798 19.722 2.93798 19.3315 3.32851L12.0371 10.6229L4.74275 3.32851C4.35223 2.93798 3.71906 2.93798 3.32854 3.32851C2.93801 3.71903 2.93801 4.3522 3.32854 4.74272L10.6229 12.0371L3.32856 19.3314C2.93803 19.722 2.93803 20.3551 3.32856 20.7457C3.71908 21.1362 4.35225 21.1362 4.74277 20.7457L12.0371 13.4513L19.3315 20.7457C19.722 21.1362 20.3552 21.1362 20.7457 20.7457C21.1362 20.3551 21.1362 19.722 20.7457 19.3315L13.4513 12.0371L20.7457 4.74272C21.1362 4.3522 21.1362 3.71903 20.7457 3.32851Z"
+                    fill="#0F0F0F"></path>
+            </g>
+        </svg>
+
         <div class="nav-buttons">
             <a class="inicio-button" href="#main-section">Inicio</a>
             <a class="planes-button" href="#servicios-section">Servicios</a>
             <a class="contacto-button" href="#validadores-section">¿Por qué nosotros?</a>
-            <a class="nosotros-button" href="#equipo-section">Nuestro Equipo</a>
-            <a class="contacto-button" href="#formulario-contacto-section">Contacto</a>
+            <a class="nosotros-button" href="#testimonio-section">Testimonio</a>
+            <a class="contacto-button" href="#objetivo-section">¿Cuál es tu siguiente objetivo?</a>
         </div>
         <div class="separador-lateral"></div>
     </nav>
@@ -37,7 +58,8 @@
                 <div class="text-section">
                     <h1>Tu Asesor Financiero de Bolsillo</h1>
                     <p>Fitoolka orquesta tus inversiones de manera inteligente.<br>Sin importar el tamaño de tu capital,
-                        te ayudamos a hacer crecer <br class="salto_linea">tu dinero con estrategias personalizadas y asesoría
+                        te ayudamos a hacer crecer <br class="salto_linea">tu dinero con estrategias personalizadas y
+                        asesoría
                         profesional.<br><br>¿Cuál es tu objetivo financiero?</p>
                     <div class="autocomplete">
                         <input type="text" placeholder="¿Cuál es tu objetivo financiero?" id="input-objetivo-financiero"
@@ -172,7 +194,7 @@
                 <div class="metricas">
                     <div class="metrica">
                         <div class="parte-izquierda">
-                            <h1>+200</h1>
+                            <h1 class="counter" data-target="200">+0</h1>
                             <h3>Millones asesorados para inversion en productos confiables</h3>
                         </div>
                         <div class="parte-derecha">
@@ -182,7 +204,7 @@
                     </div>
                     <div class="metrica">
                         <div class="parte-izquierda">
-                            <h1>+55</h1>
+                            <h1 class="counter" data-target="55">+0</h1>
                             <h3>Millones en activos y valores bajo gestión</h3>
                         </div>
                         <div class="parte-derecha">
@@ -194,7 +216,7 @@
                 <div class="metricas">
                     <div class="metrica">
                         <div class="parte-izquierda">
-                            <h1>+5</h1>
+                            <h1 class="counter" data-target="5">+0</h1>
                             <h3>Años de experiencia en el sector</h3>
                         </div>
                         <div class="parte-derecha">
@@ -205,7 +227,7 @@
                     <div class="metrica">
                         <div class="parte-izquierda">
                             <h3>Desde el año</h3>
-                            <h1>2023</h1>
+                            <h1 class="counter" data-target="2023">0</h1>
                         </div>
                         <div class="parte-derecha">
                             <h3>Creemos que la mejor forma de ayudar es educando, sirviendo y acompañando, y lo
@@ -215,6 +237,7 @@
                 </div>
             </div>
         </section>
+        <!--
         <section class="comentarios-section">
             <div class="texto-inicial">
                 <h1>Clientes satisfechos</h1>
@@ -242,7 +265,7 @@
                             <h3>¿Qué impacto tuvo en tu vida el proceso de gestión de deuda y organización de finanzas personales de Fitoolka?</h3>
                             <p>Gracias a Fitoolka, pude tener más consciencia de mis finanzas, entendiendo que no puedo contar con recursos que no tengo y aprendí a gestionar mi gasto.</p>
                         </div>
-                        <!--
+                        
                         <div class="comentario">
                             <h2>Dayana</h2>
                             <h3>¿Qué tanto te ayudó Fitoolka con tus finanzas personales?</h3>
@@ -259,7 +282,7 @@
                                 veritatis illum id odio facere voluptate, dolores laborum, at eligendi similique.
                                 Facilis quia tempore ipsa.</p>
                         </div>
-                        -->
+                        
                     </div>
                     <div class="boton-adelante"><svg fill="#000000" viewBox="-8.5 0 32 32" version="1.1"
                             xmlns="http://www.w3.org/2000/svg">
@@ -277,13 +300,23 @@
                 <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <circle cx="8" cy="8" r="8"></circle> </g></svg>
             </div></div>
         </section>
-        <section class="objetivo-section">
+        -->
+        <section class="testimonio-section" id="testimonio-section">
+            <p>"Gracias a Fitoolka, mis finanzas cambiaron un 100%. Teniendo en cuenta que no tenía conocimiento en
+                absoluto de cómo se conformaba un portafolio financiero ni en la importancia de diversificar, ese primer
+                contacto me ayudó muchísimo a sentar las bases de mi economía personal, de conocer mi perfil y además,
+                estar consciente de en qué realmente estaba gastando mis ingresos".</p>
+            <h4>Dayanna</h4>
+            <h5>Primera clienta de Fitoolka</h5>
+        </section>
+        <section class="objetivo-section" id="objetivo-section">
             <h1>Hablemos de tu siguiente objetivo financiero</h1>
             <p>Déjanos aquí lo que tienes en mente, así podremos diseñarte un plan personalizado.</p>
             <textarea name="" id="texto-objetivo"></textarea>
             <br>
             <button id="btn-abrir-modal-objetivo">Estoy listo!</button>
         </section>
+        <!--
         <section class="equipo-section" id="equipo-section">
             <h1>Nuestro Equipo</h1>
             <p>Conoce a las personas que hacen posible Fitoolka.</p>
@@ -305,6 +338,7 @@
                 </div>
             </div>
         </section>
+        -->
         <!--
         <section class="formulario-contacto-section" id="formulario-contacto-section">
             <h1>Y tú, ¿qué esperas para dar el primer paso?</h1>
@@ -338,7 +372,33 @@
             </div>
         </section>
         -->
+        <div class="boton-whatsapp" onclick="abrirWhatsapp()">
+            <svg viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                    <title>whatsapp</title>
+                    <path
+                        d="M26.576 5.363c-2.69-2.69-6.406-4.354-10.511-4.354-8.209 0-14.865 6.655-14.865 14.865 0 2.732 0.737 5.291 2.022 7.491l-0.038-0.070-2.109 7.702 7.879-2.067c2.051 1.139 4.498 1.809 7.102 1.809h0.006c8.209-0.003 14.862-6.659 14.862-14.868 0-4.103-1.662-7.817-4.349-10.507l0 0zM16.062 28.228h-0.005c-0 0-0.001 0-0.001 0-2.319 0-4.489-0.64-6.342-1.753l0.056 0.031-0.451-0.267-4.675 1.227 1.247-4.559-0.294-0.467c-1.185-1.862-1.889-4.131-1.889-6.565 0-6.822 5.531-12.353 12.353-12.353s12.353 5.531 12.353 12.353c0 6.822-5.53 12.353-12.353 12.353h-0zM22.838 18.977c-0.371-0.186-2.197-1.083-2.537-1.208-0.341-0.124-0.589-0.185-0.837 0.187-0.246 0.371-0.958 1.207-1.175 1.455-0.216 0.249-0.434 0.279-0.805 0.094-1.15-0.466-2.138-1.087-2.997-1.852l0.010 0.009c-0.799-0.74-1.484-1.587-2.037-2.521l-0.028-0.052c-0.216-0.371-0.023-0.572 0.162-0.757 0.167-0.166 0.372-0.434 0.557-0.65 0.146-0.179 0.271-0.384 0.366-0.604l0.006-0.017c0.043-0.087 0.068-0.188 0.068-0.296 0-0.131-0.037-0.253-0.101-0.357l0.002 0.003c-0.094-0.186-0.836-2.014-1.145-2.758-0.302-0.724-0.609-0.625-0.836-0.637-0.216-0.010-0.464-0.012-0.712-0.012-0.395 0.010-0.746 0.188-0.988 0.463l-0.001 0.002c-0.802 0.761-1.3 1.834-1.3 3.023 0 0.026 0 0.053 0.001 0.079l-0-0.004c0.131 1.467 0.681 2.784 1.527 3.857l-0.012-0.015c1.604 2.379 3.742 4.282 6.251 5.564l0.094 0.043c0.548 0.248 1.25 0.513 1.968 0.74l0.149 0.041c0.442 0.14 0.951 0.221 1.479 0.221 0.303 0 0.601-0.027 0.889-0.078l-0.031 0.004c1.069-0.223 1.956-0.868 2.497-1.749l0.009-0.017c0.165-0.366 0.261-0.793 0.261-1.242 0-0.185-0.016-0.366-0.047-0.542l0.003 0.019c-0.092-0.155-0.34-0.247-0.712-0.434z">
+                    </path>
+                </g>
+            </svg>
+        </div>
     </main>
+    <div class="menu-hamburguesa">
+        <div class="menu-hamburguesa-buttons">
+            <a class="inicio-button" href="#main-section" onclick=toggleMenuHamburguesa()>Inicio</a>
+            <a class="planes-button" href="#servicios-section" onclick=toggleMenuHamburguesa()>Servicios</a>
+            <a class="contacto-button" href="#validadores-section" onclick=toggleMenuHamburguesa()>¿Por qué
+                nosotros?</a>
+            <a class="nosotros-button" href="#testimonio-section" onclick=toggleMenuHamburguesa()>Testimonio</a>
+            <a class="contacto-button" href="#objetivo-section" onclick=toggleMenuHamburguesa()>¿Cuál es tu siguiente
+                objetivo?</a>
+        </div>
+        <div class="texto_copyright">
+            <p>© 2026 Fitoolka. Todos los derechos reservados.</p>
+        </div>
+    </div>
     <footer class="footer">
         <div class="informacion-section">
             <div class="enlaces_rapidos">
@@ -346,8 +406,8 @@
                 <div class="lista_enlaces">
                     <div><a href="#servicios-section">Servicios</a></div>
                     <div><a href="#validadores-section">¿Por qué nosotros?</a></div>
-                    <div><a href="#equipo-section">Equipo</a></div>
-                    <div><a href="#formulario-contacto-section">Contacto</a></div>
+                    <div><a href="#equipo-section">Testimonio</a></div>
+                    <div><a href="#formulario-contacto-section">¿Cuál es tu objetivo?</a></div>
                 </div>
 
             </div>

@@ -56,17 +56,47 @@ body {
   .navbar {
     position: sticky;
     top: 0;
+    height: 60px;
+    min-height: 0px;
+    z-index: 1000;
+    border-bottom-color: rgb(190, 190, 190);
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
   }
 }
 .navbar img {
-  height: 50px;
+  height: 60px;
   padding-left: 100px;
 }
 @media (max-width: 850px) {
   .navbar img {
-    padding-left: 0px;
-    margin: 0 auto;
+    height: 35px;
+    padding-left: 2%;
+    margin: 0;
   }
+}
+.navbar svg {
+  display: none;
+}
+@media (max-width: 850px) {
+  .navbar svg {
+    padding-right: 2%;
+    margin: 0;
+    height: 40px;
+  }
+}
+.navbar .svg-abrir-menu-hamburguesa {
+  display: inline;
+}
+.navbar .svg-abrir-menu-hamburguesa.inactivo {
+  display: none;
+}
+.navbar .svg-cerrar-menu-hamburguesa {
+  display: none;
+}
+.navbar .svg-cerrar-menu-hamburguesa.activo {
+  display: inline;
+  height: 30px;
 }
 .navbar .nav-buttons {
   align-items: center;
@@ -119,6 +149,7 @@ body {
 @media (max-width: 850px) {
   .main-section {
     font-size: 1.4svh;
+    scroll-margin-top: 60px;
   }
 }
 @media (max-width: 850px) {
@@ -357,6 +388,8 @@ body {
   display: flex;
   flex-direction: row;
   height: 15vw;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 5vw;
 }
 @media (max-width: 850px) {
   .servicios-section .servicios .servicio {
@@ -423,6 +456,7 @@ body {
 @media (max-width: 850px) {
   .servicios-section .servicios .servicio .texto h3 {
     font-size: 2.1em;
+    padding-top: 1%;
   }
 }
 .servicios-section .servicios .servicio .texto p {
@@ -444,8 +478,8 @@ body {
   border-bottom-right-radius: 0;
 }
 .servicios-section .servicios .servicio:hover {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  border-radius: 5vw;
+  box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.2), 0 8px 25px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 10vw;
   transition: 0.3s;
 }
 
@@ -893,6 +927,68 @@ body {
   transform: translateY(0);
 }
 
+.testimonio-section {
+  width: 100%;
+  height: auto;
+  padding: 50px 0;
+  text-align: center;
+  justify-content: left;
+  background-color: #161616;
+  scroll-margin-top: 70px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+  display: flex;
+  flex-direction: column;
+}
+.testimonio-section p {
+  width: 60%;
+  text-align: left;
+  margin: 0 auto;
+  padding: 0;
+}
+@media (max-width: 850px) {
+  .testimonio-section p {
+    width: 90%;
+    font-size: 2.2svh;
+  }
+}
+.testimonio-section h4 {
+  width: 60%;
+  text-align: left;
+  margin: 0 auto;
+  padding: 0;
+  padding-top: 1%;
+  color: white;
+  font-size: 2svh;
+}
+@media (max-width: 850px) {
+  .testimonio-section h4 {
+    width: 90%;
+    padding-top: 4%;
+    font-size: 1.8svh;
+  }
+}
+.testimonio-section h5 {
+  width: 60%;
+  text-align: left;
+  margin: 0 auto;
+  padding: 0;
+  color: rgb(204, 204, 204);
+  font-size: 2svh;
+}
+@media (max-width: 850px) {
+  .testimonio-section h5 {
+    width: 90%;
+    font-size: 1.8svh;
+  }
+}
+
+.testimonio-section.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .objetivo-section {
   width: 100%;
   height: auto;
@@ -1152,6 +1248,82 @@ body {
 .formulario-contacto-section.active {
   opacity: 1;
   transform: translateY(0);
+}
+
+.boton-whatsapp {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 50px;
+  height: 50px;
+  z-index: 10;
+  background-color: #25D366;
+  border-radius: 50%;
+  padding: 10px;
+}
+.boton-whatsapp svg {
+  fill: white;
+  width: 80%;
+  height: 50px;
+}
+
+.boton-whatsapp:hover {
+  cursor: pointer;
+  background-color: #128C7E;
+}
+
+.menu-hamburguesa {
+  position: fixed;
+  top: 0;
+  transform: translateX(100%);
+  transition: transform 0.4s ease-in-out;
+  width: 100%;
+  height: 100vh;
+  background-color: #e5e7eb;
+  background: #e5e7eb;
+  z-index: 900;
+  display: none;
+  padding-top: 60px;
+  text-align: center;
+}
+@media (max-width: 850px) {
+  .menu-hamburguesa {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.menu-hamburguesa .menu-hamburguesa-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding-left: 8%;
+  padding-right: 8%;
+}
+.menu-hamburguesa .menu-hamburguesa-buttons a {
+  padding: 10px;
+  background-color: #e5e7eb;
+  border-style: none;
+  font-family: "Manrope", sans-serif;
+  font-size: 1.9em;
+  text-decoration: none;
+  color: black;
+  border-bottom-color: rgb(185, 185, 185);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+}
+.menu-hamburguesa .menu-hamburguesa-buttons a:hover {
+  font-weight: bold;
+  cursor: pointer;
+}
+.menu-hamburguesa p {
+  text-align: center;
+  font-size: 1.2em;
+  color: rgb(117, 117, 117);
+}
+
+.menu-hamburguesa.activo {
+  transform: translateX(0);
 }
 
 .footer {

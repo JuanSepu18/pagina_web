@@ -1,4 +1,4 @@
-const reveals = document.querySelectorAll('.pilares-section, .planes-section, .equipo-section, .formulario-contacto-section, .validadores-section, .servicios-section, .objetivo-section, .comentarios-section');
+const reveals = document.querySelectorAll('.pilares-section, .planes-section, .equipo-section, .formulario-contacto-section, .validadores-section, .servicios-section, .objetivo-section, .comentarios-section, .testimonio-section');
 
 const observer = new IntersectionObserver(
   (entries) => {
@@ -290,6 +290,48 @@ document.addEventListener("DOMContentLoaded", () => {
   escribir();
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+
+  const counters = document.querySelectorAll(".counter");
+  const section = document.querySelector(".validadores-section");
+
+  const animateCounter = (counter) => {
+    const target = +counter.getAttribute("data-target");
+    const hasPlus = counter.innerText.includes("+");
+    const speed = 300; 
+    const increment = target / speed;
+
+    let current = 0;
+
+    const updateCounter = () => {
+      current += increment;
+
+      if (current < target) {
+        const value = Math.ceil(current).toLocaleString();
+        counter.innerText = hasPlus ? `+${value}` : value;
+        requestAnimationFrame(updateCounter);
+      } else {
+        const finalValue = target.toLocaleString();
+        counter.innerText = hasPlus ? `+${finalValue}` : finalValue;
+      }
+    };
+
+    updateCounter();
+  };
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      if (entries[0].isIntersecting) {
+        counters.forEach(counter => animateCounter(counter));
+        observer.disconnect(); // solo una vez
+      }
+    },
+    { threshold: 0.4 }
+  );
+
+  observer.observe(section);
+});
+
 
 const input_1 = document.querySelector("#phone");
 
@@ -447,5 +489,18 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+function abrirWhatsapp(){
+  window.open("https://wa.me/573007476818", "_blank");
+}
 
 
+const menuHamburguesa = document.querySelector(".menu-hamburguesa");
+const btnabrirmenuHamburguesa = document.querySelector(".svg-abrir-menu-hamburguesa");
+const btncerrarmenuHamburguesa = document.querySelector(".svg-cerrar-menu-hamburguesa");
+
+
+function toggleMenuHamburguesa(){
+   menuHamburguesa.classList.toggle("activo")
+   btnabrirmenuHamburguesa.classList.toggle("inactivo")
+   btncerrarmenuHamburguesa.classList.toggle("activo")
+}
