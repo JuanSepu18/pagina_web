@@ -85,18 +85,26 @@ body {
     height: 40px;
   }
 }
-.navbar .svg-abrir-menu-hamburguesa {
-  display: inline;
+@media (max-width: 850px) {
+  .navbar .svg-abrir-menu-hamburguesa {
+    display: inline;
+  }
 }
-.navbar .svg-abrir-menu-hamburguesa.inactivo {
-  display: none;
+@media (max-width: 850px) {
+  .navbar .svg-abrir-menu-hamburguesa.inactivo {
+    display: none;
+  }
 }
-.navbar .svg-cerrar-menu-hamburguesa {
-  display: none;
+@media (max-width: 850px) {
+  .navbar .svg-cerrar-menu-hamburguesa {
+    display: none;
+  }
 }
-.navbar .svg-cerrar-menu-hamburguesa.activo {
-  display: inline;
-  height: 30px;
+@media (max-width: 850px) {
+  .navbar .svg-cerrar-menu-hamburguesa.activo {
+    display: inline;
+    height: 30px;
+  }
 }
 .navbar .nav-buttons {
   align-items: center;
