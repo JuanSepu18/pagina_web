@@ -75,8 +75,9 @@ body {
     }
 
     img {
-        height: 60px;
+        height: 50px;
         padding-left: 100px;
+        margin:10px;
 
         @media (max-width: $mobile-breakpoint) {
             height: 35px;

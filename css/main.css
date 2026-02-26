@@ -65,12 +65,14 @@ body {
   }
 }
 .navbar img {
-  height: 60px;
+  height: 50px;
   padding-left: 100px;
+  margin: 10px;
 }
 @media (max-width: 850px) {
   .navbar img {
     height: 35px;
+    width: auto;
     padding-left: 2%;
     margin: 0;
   }
